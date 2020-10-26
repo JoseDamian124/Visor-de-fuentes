@@ -24,5 +24,49 @@ namespace visor_de_fuentes
         {
             InitializeComponent();
         }
+
+        private void fuenteComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (fuenteComboBox.SelectedItem != null)
+            {
+                string fuente = (string)(fuenteComboBox.SelectedItem as ComboBoxItem).Content;
+                leyendaTexblock.FontFamily = new FontFamily(familyName: fuente);
+            }
+        }
+
+        private void cursivaCheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            leyendaTexblock.FontStyle = FontStyles.Italic;
+        }
+        private void negritasCheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            leyendaTexblock.FontWeight = FontWeights.Bold;
+        }
+
+        private void cursivaCheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            leyendaTexblock.FontStyle = FontStyles.Normal;
+        }
+
+        private void negritasCheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            leyendaTexblock.FontWeight = FontWeights.Normal;
+        }
+
+        private void smallRadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            if (smallRadioButton.IsChecked == true)
+            {
+                leyendaTexblock.FontSize = 12;
+            }
+            else if (mediumRadioButton.IsChecked == true)
+            {
+                leyendaTexblock.FontSize = 18;
+            }
+            else
+            {
+                leyendaTexblock.FontSize = 24;
+            }
+        }
     }
 }

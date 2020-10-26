@@ -38,10 +38,13 @@
                   BorderBrush="LightGray"
                   BorderThickness="1"
                   Margin="8,4,4,8">
+
             <ComboBox x:Name="fuenteComboBox"
                   VerticalAlignment="Top"
-                  Margin="4"
-                  SelectedIndex="0">
+                  SelectedIndex="0"
+                  SelectionChanged="fuenteComboBox_SelectionChanged"    
+                  Margin="4">
+
                 <ComboBoxItem Content="Arial"/>
                 <ComboBoxItem Content="Consola"/>
                 <ComboBoxItem Content=" Time New Roman"/>
@@ -59,11 +62,15 @@
                 <CheckBox Content="Cursiva"
                           Margin="8,8,8,4"
                           IsChecked="False"
-                          x:Name="cursivaCheckBox"/>
+                          x:Name="cursivaCheckBox"
+                          Checked="cursivaCheckBox_Checked"
+                          Unchecked="cursivaCheckBox_Unchecked"/>
                 <CheckBox Content="Negritas"
                           Margin="8,4,8,8"
                           IsChecked="False"
-                          x:Name="negritasCheckBox"/>
+                          x:Name="negritasCheckBox"
+                          Checked="negritasCheckBox_Checked"
+                          Unchecked="negritasCheckBox_Unchecked"/>
 
             </StackPanel>
         </GroupBox>
@@ -79,15 +86,18 @@
                 <RadioButton x:Name="smallRadioButton"
                              Content="Pequeño"
                              Margin="8,8,8,4"
-                             IsChecked="True"/>
+                             IsChecked="True"
+                             Checked="smallRadioButton_Checked"/>
                 <RadioButton x:Name="mediumRadioButton"
                              Content="Mediana"
                              Margin="8,4,8,4"
-                             IsChecked="False"/>
+                             IsChecked="False"
+                             Checked="smallRadioButton_Checked"/> 
                 <RadioButton x:Name="largeRadioButton"
                              Content="Grande"
                              Margin="8,4,8,8"
-                             IsChecked="False"/>
+                             IsChecked="False"
+                             Checked="smallRadioButton_Checked"/>
             </StackPanel>
         </GroupBox>
         
