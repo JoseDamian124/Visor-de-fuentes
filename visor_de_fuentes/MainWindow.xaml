@@ -5,8 +5,91 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:visor_de_fuentes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="350" Width="500">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
 
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Margin="8"
+                BorderThickness="1"
+                BorderBrush="LightGray">
+            <DockPanel Margin="4">
+                <TextBlock Text="Intituto Tecnologico de Campeche"
+                           x:Name="leyendaTexblock"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
+                
+            </DockPanel>
+        </Border>
+        <GroupBox Grid.Row="1"
+                  Grid.Column="0"
+                  Header="Fuente"
+                  BorderBrush="LightGray"
+                  BorderThickness="1"
+                  Margin="8,4,4,8">
+            <ComboBox x:Name="fuenteComboBox"
+                  VerticalAlignment="Top"
+                  Margin="4"
+                  SelectedIndex="0">
+                <ComboBoxItem Content="Arial"/>
+                <ComboBoxItem Content="Consola"/>
+                <ComboBoxItem Content=" Time New Roman"/>
+                <ComboBoxItem Content=" Verdana"/>
+            </ComboBox>
+        </GroupBox>
+
+        <GroupBox Grid.Row="1"
+                  Grid.Column="1"
+                  Header="Estilo"
+                  BorderBrush="LightGray"
+                  BorderThickness="1"
+                  Margin="4,4,4,8">
+            <StackPanel>
+                <CheckBox Content="Cursiva"
+                          Margin="8,8,8,4"
+                          IsChecked="False"
+                          x:Name="cursivaCheckBox"/>
+                <CheckBox Content="Negritas"
+                          Margin="8,4,8,8"
+                          IsChecked="False"
+                          x:Name="negritasCheckBox"/>
+
+            </StackPanel>
+        </GroupBox>
+
+        <GroupBox Grid.Row="1"
+                  Grid.Column="2"
+                  Header="Tamaño"
+                  BorderBrush="LightGray"
+                  BorderThickness="1"
+                  Margin="4,4,8,8">
+
+            <StackPanel>
+                <RadioButton x:Name="smallRadioButton"
+                             Content="Pequeño"
+                             Margin="8,8,8,4"
+                             IsChecked="True"/>
+                <RadioButton x:Name="mediumRadioButton"
+                             Content="Mediana"
+                             Margin="8,4,8,4"
+                             IsChecked="False"/>
+                <RadioButton x:Name="largeRadioButton"
+                             Content="Grande"
+                             Margin="8,4,8,8"
+                             IsChecked="False"/>
+            </StackPanel>
+        </GroupBox>
+        
     </Grid>
 </Window>
